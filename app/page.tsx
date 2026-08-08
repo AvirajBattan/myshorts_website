@@ -1,12 +1,33 @@
 import Hero from "@/components/Hero";
 import Reframe from "@/components/Reframe";
 import Reveal from "@/components/Reveal";
+import FillVideo from "@/components/FillVideo";
 
 const APP = "https://app.myshorts.in";
+
+const FAQS: [string, string][] = [
+  ["Do I need to upload or download the video?", "No. Paste a YouTube link and we handle the rest — nothing to upload, nothing to install."],
+  ["What quality are the clips?", "Full HD (up to 1440p) with no watermark — on every plan, including Free. Paid plans only add more monthly volume."],
+  ["How does the AI know which part to clip?", "You describe the moment in plain English (“the most viral 30 seconds”, “where they explain X”). The AI reads the transcript and finds the best-matching cut, scored by viral potential."],
+  ["Will it cut off the person speaking?", "No — the crop is face-aware and tracks the speaker. For two-person clips you can stack them (split) or zoom out (wide)."],
+  ["Can I use my own AI key?", "Yes. Bring your own model key (Gemini, OpenAI or Claude) in settings, or use the built-in default."],
+  ["Can I cancel anytime?", "Yes. Plans are monthly via Razorpay and you can cancel whenever you like."],
+];
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map(([q, a]) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
 
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <Hero />
 
       {/* ===== TRUST STRIP ===== */}
@@ -95,7 +116,7 @@ export default function Home() {
                 <h3>Face-aware 9:16</h3>
                 <p>The crop tracks the speaker frame-by-frame — nobody gets cut off.</p>
               </div>
-              <div className="tile-mini reframe"><div className="mini-reticle" /></div>
+              <div className="tile-mini reframe"><FillVideo src="/reframe.mp4" /><div className="mini-reticle" /></div>
             </Reveal>
             <Reveal as="article" className="tile" delay={0.12}>
               <div className="tile-body">
@@ -109,7 +130,16 @@ export default function Home() {
                 <h3>Not just clips — understand the whole video</h3>
                 <p>Every video also gets an instant summary, editable notes, a searchable transcript, and grounded Q&amp;A. Research and repurpose in one place.</p>
               </div>
-              <div className="tile-tags"><em>Summary</em><em>Notes</em><em>Transcript</em><em>Q&amp;A</em></div>
+              <div className="insight" aria-hidden="true">
+                <div className="insight-tabs"><b>Summary</b><span>Notes</span><span>Transcript</span><span>Q&amp;A</span></div>
+                <div className="insight-body">
+                  <span className="il" /><span className="il" /><span className="il w80" />
+                  <div className="insight-qa">
+                    <span className="qa-q">Q</span>
+                    <div className="qa-t"><b>What&apos;s the core framework?</b><i>Answered from the transcript · 0:00–12:40</i></div>
+                  </div>
+                </div>
+              </div>
             </Reveal>
           </div>
         </div>
@@ -187,14 +217,7 @@ export default function Home() {
         <div className="wrap faq-wrap">
           <Reveal className="sec-head"><span className="eyebrow">FAQ</span><h2>Good questions.</h2></Reveal>
           <div className="faq">
-            {[
-              ["Do I need to upload or download the video?", "No. Paste a YouTube link and we handle the rest — nothing to upload, nothing to install."],
-              ["What quality are the clips?", "Full HD (up to 1440p) with no watermark — on every plan, including Free. Paid plans only add more monthly volume."],
-              ["How does the AI know which part to clip?", "You describe the moment in plain English (“the most viral 30 seconds”, “where they explain X”). The AI reads the transcript and finds the best-matching cut, scored by viral potential."],
-              ["Will it cut off the person speaking?", "No — the crop is face-aware and tracks the speaker. For two-person clips you can stack them (split) or zoom out (wide)."],
-              ["Can I use my own AI key?", "Yes. Bring your own model key (Gemini, OpenAI or Claude) in settings, or use the built-in default."],
-              ["Can I cancel anytime?", "Yes. Plans are monthly via Razorpay and you can cancel whenever you like."],
-            ].map(([q, a], i) => (
+            {FAQS.map(([q, a], i) => (
               <Reveal key={i} delay={i * 0.04}>
                 <details><summary>{q}</summary><p>{a}</p></details>
               </Reveal>

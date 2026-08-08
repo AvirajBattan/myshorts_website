@@ -17,8 +17,11 @@ export const metadata: Metadata = {
   description:
     "Paste a YouTube link, describe the moment you want, and get scroll-stopping vertical Shorts — face-aware 9:16 reframing, animated captions, and AI clip-finding. Full HD, no watermark, from ₹499/mo.",
   keywords: [
-    "youtube to shorts", "ai shorts generator", "clip finder", "vertical video",
-    "9:16 reframe", "auto captions", "repurpose video", "shorts maker india",
+    "youtube to shorts", "ai shorts generator", "how to turn a youtube video into shorts",
+    "clip finder", "clip by description", "vertical video", "9:16 reframe",
+    "convert 16:9 to 9:16", "auto captions", "captions for shorts", "repurpose video",
+    "make shorts from long videos", "youtube shorts maker india", "reels maker",
+    "tiktok clip maker", "opus clip alternative",
   ],
   authors: [{ name: "MyShorts" }],
   alternates: { canonical: "/" },

@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useMotionTemplate } from "framer-motion";
+import FillVideo from "./FillVideo";
 
 /** As you scroll through this tall section, the widescreen frame "reframes" into a
  *  9:16 vertical keep-zone (scrubbed), with the discarded edges dimming out. */
@@ -32,6 +33,7 @@ export default function Reframe() {
           <div className="dive-visual">
             <div className="rf-media">
               <div className="scene" aria-hidden="true" />
+              <FillVideo src="/reframe.mp4" />
               <motion.span className="rf-tag rf-tag-16" style={{ opacity: label169 }}>16:9 source</motion.span>
               <motion.div className="rf-window" style={{ width: winW, boxShadow: shadow }}>
                 <motion.span className="rf-tag rf-tag-9" style={{ opacity: label916 }}>9:16</motion.span>
