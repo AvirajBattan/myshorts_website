@@ -32,7 +32,7 @@ export default function Hero() {
           <div className="source-frame">
             <div className="scene" aria-hidden="true" />
             <FillVideo src="/source.mp4" />
-            <span className="src-tag"><i className="ytd" /> youtube.com</span>
+            <span className="src-tag"><svg className="ytd" viewBox="0 0 28 20" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#FF0033" /><path d="M11 6v8l7-4z" fill="#fff" /></svg> youtube.com</span>
             <div className="fd-scan" aria-hidden="true" />
             <div className="fd-box" aria-hidden="true"><span className="fd-label">Speaker 98%</span></div>
           </div>

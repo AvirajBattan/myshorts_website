@@ -36,11 +36,18 @@ export default function Nav() {
           <a href="#features">Features</a>
           <a href="#pricing">Pricing</a>
           <a href="/blog">Blog</a>
+          {/* shown inside the mobile dropdown only */}
+          <div className="nav-links-cta">
+            <a className="btn btn-line" href={APP}>Sign in</a>
+            <a className="btn btn-signal" href={APP}>Start free →</a>
+          </div>
         </nav>
         <div className="nav-cta">
           <a className="btn btn-ghost" href={APP}>Sign in</a>
           <a className="btn btn-signal" href={APP}>Start free</a>
         </div>
+        {/* persistent compact CTA on mobile */}
+        <a className="btn btn-signal btn-sm nav-cta-mini" href={APP}>Open app</a>
         <button className="nav-burger" aria-label="Toggle menu" aria-expanded={open} onClick={() => setOpen((v) => !v)}>
           <span></span><span></span><span></span>
         </button>

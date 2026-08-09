@@ -109,7 +109,17 @@ export default function Home() {
                 <h3>Clip by description</h3>
                 <p>Don&apos;t scrub an hour of footage. Say the moment you want in plain English — the AI finds the exact cut, scored by viral potential.</p>
               </div>
-              <div className="tile-mini describe"><span className="dq">&ldquo;the most viral 30 seconds&rdquo;</span></div>
+              <div className="tile-mini describe" aria-hidden="true">
+                <div className="mini-find">
+                  <div className="mf-bar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+                    <span>&ldquo;the most viral 30 seconds&rdquo;</span>
+                    <b>Find</b>
+                  </div>
+                  <div className="mf-row"><span className="mf-score">94</span><span className="mf-t">The 3-second hook</span><span className="mf-dur">0:27</span></div>
+                  <div className="mf-row"><span className="mf-score">88</span><span className="mf-t">Why most people quit</span><span className="mf-dur">0:36</span></div>
+                </div>
+              </div>
             </Reveal>
             <Reveal as="article" className="tile" delay={0.06}>
               <div className="tile-body">
