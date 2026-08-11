@@ -1,4 +1,4 @@
-import { usecaseList } from "@/content/usecases";
+import { featureList, compareList } from "@/content/usecases";
 
 const APP = "https://app.myshorts.in";
 
@@ -24,11 +24,15 @@ export default function Footer() {
           <div>
             <h4>Tools</h4>
             <a href="/#top">Make Shorts</a>
-            {usecaseList.map((u) => (<a key={u.slug} href={`/${u.slug}`}>{u.navLabel}</a>))}
+            {featureList.map((u) => (<a key={u.slug} href={`/${u.slug}`}>{u.navLabel}</a>))}
           </div>
           <div><h4>Product</h4><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#pricing">Pricing</a></div>
           <div><h4>Company</h4><a href="/blog">Blog</a><a href="/#faq">FAQ</a><a href={APP}>Sign in</a></div>
-          <div><h4>Legal</h4><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
+          <div>
+            <h4>Compare</h4>
+            {compareList.map((u) => (<a key={u.slug} href={`/${u.slug}`}>{u.navLabel}</a>))}
+            <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
+          </div>
         </nav>
       </div>
       <div className="wrap footer-base">

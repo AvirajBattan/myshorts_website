@@ -85,9 +85,12 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         </div>
 
         <div className="article-cta">
-          <h3>Turn your next video into Shorts</h3>
-          <p>Paste a YouTube link, describe the moment, and get a full-HD 9:16 Short — free to start, no card.</p>
+          <h3>Turn your next video into more than a watch</h3>
+          <p>Paste a YouTube link and get Shorts, a summary, notes, and answers — free to start, no card.</p>
           <a className="btn btn-signal btn-lg" href={APP}>Start free →</a>
+          {post.related && (
+            <p className="article-cta-related"><Link href={post.related.href}>{post.related.label}</Link></p>
+          )}
         </div>
 
         {related.length > 0 && (

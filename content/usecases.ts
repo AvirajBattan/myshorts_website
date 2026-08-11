@@ -1,17 +1,18 @@
 export type UseCase = {
   slug: string;
-  navLabel: string;          // short label for nav/footer/cross-links
+  kind: "feature" | "compare";  // feature pages show in nav/footer/home; compare pages are "X alternative" SEO pages
+  navLabel: string;             // short label for nav/footer/cross-links
   // SEO
-  title: string;             // <title> (the layout appends "· MyShorts")
+  title: string;                // <title> (the layout appends "· MyShorts")
   description: string;
   keywords: string[];
   // hero
   eyebrow: string;
-  h1lead: string;            // plain text before the ember highlight
-  h1highlight: string;       // ember-highlighted phrase
-  h1tail: string;            // text after the highlight
+  h1lead: string;               // plain text before the ember highlight
+  h1highlight: string;          // ember-highlighted phrase
+  h1tail: string;               // text after the highlight
   lede: string;
-  cardDesc: string;          // one-liner used on cross-link cards
+  cardDesc: string;             // one-liner used on cross-link cards
   steps: { n: string; h: string; p: string }[];
   features: { h: string; p: string }[];
   faqs: [string, string][];
@@ -20,6 +21,7 @@ export type UseCase = {
 export const USECASES: Record<string, UseCase> = {
   "youtube-summarizer": {
     slug: "youtube-summarizer",
+    kind: "feature",
     navLabel: "Summarize",
     title: "YouTube Video Summarizer — Summarize any video in seconds",
     description:
@@ -60,6 +62,7 @@ export const USECASES: Record<string, UseCase> = {
 
   "youtube-notes": {
     slug: "youtube-notes",
+    kind: "feature",
     navLabel: "Notes",
     title: "Turn YouTube Videos Into Notes — AI video notes",
     description:
@@ -100,6 +103,7 @@ export const USECASES: Record<string, UseCase> = {
 
   "chat-with-youtube": {
     slug: "chat-with-youtube",
+    kind: "feature",
     navLabel: "Ask a video",
     title: "Chat With Any YouTube Video — ask questions, get answers",
     description:
@@ -137,7 +141,91 @@ export const USECASES: Record<string, UseCase> = {
       ["Is it free?", "You can ask questions for free (a few per video); paid plans raise the limit."],
     ],
   },
+
+  "opus-clip-alternative": {
+    slug: "opus-clip-alternative",
+    kind: "compare",
+    navLabel: "Opus Clip alternative",
+    title: "Opus Clip Alternative — Turn videos into Shorts, priced for India",
+    description:
+      "Looking for an Opus Clip alternative? MyShorts turns any YouTube video into face-aware 9:16 Shorts with captions — full HD and no watermark on every plan, including Free, from ₹499/mo. Plus summaries, notes and Q&A.",
+    keywords: [
+      "opus clip alternative",
+      "opusclip alternative",
+      "youtube to shorts alternative",
+      "ai shorts tool",
+      "clip generator alternative",
+      "opus clip india",
+    ],
+    eyebrow: "Alternative",
+    h1lead: "The ",
+    h1highlight: "Opus Clip alternative",
+    h1tail: " built for creators in India.",
+    lede: "Turn any YouTube video into scroll-stopping vertical Shorts — face-aware reframing, animated captions, full HD, and no watermark on every plan, including Free. Priced in rupees, from ₹499/mo.",
+    cardDesc: "Turn videos into Shorts — full HD, no watermark, from ₹499/mo.",
+    steps: [
+      { n: "01", h: "Paste a YouTube link", p: "No upload, no download — MyShorts pulls the transcript instantly." },
+      { n: "02", h: "Describe the moment", p: "Say the clip you want in plain English; the AI finds the exact cut." },
+      { n: "03", h: "Get a ready-to-post Short", p: "Face-aware 9:16 with burned-in captions, in full HD with no watermark." },
+    ],
+    features: [
+      { h: "No watermark — on every plan", p: "Your clips look like yours from day one, including on the Free plan." },
+      { h: "Full HD, no resolution caps", p: "Quality is standard, not a paid upgrade." },
+      { h: "Priced for India", p: "Plans in rupees, from ₹499/mo — start free, upgrade only for more volume." },
+      { h: "More than clips", p: "The same link also gives you summaries, editable notes and grounded Q&A." },
+    ],
+    faqs: [
+      ["Is MyShorts a good Opus Clip alternative?", "If you want face-aware vertical clips with captions, full HD and no watermark on every plan, and pricing in rupees, MyShorts is built for exactly that — plus summaries, notes and Q&A from the same video."],
+      ["Does the free plan add a watermark?", "No. MyShorts adds no watermark on any plan, including Free, and there are no resolution caps."],
+      ["Is it available in India and priced in rupees?", "Yes — plans start at ₹499/mo, billed via Razorpay, and you can cancel anytime."],
+      ["Does it keep the speaker in frame?", "Yes — the 9:16 crop is face-aware and tracks the speaker, with Wide and Split framing for two people."],
+      ["What else can it do?", "Beyond Shorts, every video gets an instant summary, editable notes, a searchable transcript, and grounded Q&A."],
+    ],
+  },
+
+  "eightify-alternative": {
+    slug: "eightify-alternative",
+    kind: "compare",
+    navLabel: "Eightify alternative",
+    title: "Eightify Alternative — Summarize videos, plus notes, Q&A and Shorts",
+    description:
+      "A free Eightify alternative: paste a YouTube link and get an AI summary with timestamps — plus editable notes, grounded Q&A, and viral Shorts. One tool, on the web, no extension or download.",
+    keywords: [
+      "eightify alternative",
+      "youtube summarizer alternative",
+      "ai youtube summary tool",
+      "free youtube summarizer",
+      "video summary alternative",
+      "youtube summary without extension",
+    ],
+    eyebrow: "Alternative",
+    h1lead: "The ",
+    h1highlight: "Eightify alternative",
+    h1tail: " that does more than summaries.",
+    lede: "Get instant AI summaries of any YouTube video with timestamps — then go further with editable notes, grounded Q&A, and scroll-stopping Shorts. All from one link, right in your browser.",
+    cardDesc: "AI summaries with timestamps — plus notes, Q&A and Shorts.",
+    steps: [
+      { n: "01", h: "Paste a YouTube link", p: "No browser extension to install — it works on the web." },
+      { n: "02", h: "We read the transcript", p: "The AI summarizes the full video, not just the description." },
+      { n: "03", h: "Get a summary — and more", p: "Key points and timestamps, plus notes, Q&A and Shorts on demand." },
+    ],
+    features: [
+      { h: "Structured summaries", p: "Key points and takeaways with section timestamps you can jump to." },
+      { h: "Editable notes", p: "Turn the summary into notes you can rewrite, keep and export." },
+      { h: "Grounded Q&A", p: "Ask the video a question and get an answer with the timestamp." },
+      { h: "Makes Shorts too", p: "Pull the best moments into face-aware 9:16 clips with captions." },
+    ],
+    faqs: [
+      ["Is MyShorts a good Eightify alternative?", "If you want AI summaries with timestamps plus editable notes, grounded Q&A, and the ability to make Shorts — all from one YouTube link — MyShorts covers all of it."],
+      ["Do I need a browser extension?", "No. MyShorts runs on the web — just paste a YouTube link, nothing to install."],
+      ["Does it summarize long videos?", "Yes — it reads the full transcript, so long podcasts and lectures summarize just as well as short videos."],
+      ["Is it free?", "Yes — you can summarize videos for free, no card required, with paid plans for more monthly volume."],
+      ["What else can it do?", "Editable notes, grounded Q&A with timestamps, a searchable transcript, and viral 9:16 Shorts — all from the same video."],
+    ],
+  },
 };
 
 export const usecaseList = Object.values(USECASES);
+export const featureList = usecaseList.filter((u) => u.kind === "feature");
+export const compareList = usecaseList.filter((u) => u.kind === "compare");
 export const getUseCase = (slug: string) => USECASES[slug];

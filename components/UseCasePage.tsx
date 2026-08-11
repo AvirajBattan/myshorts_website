@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import { type UseCase, usecaseList } from "@/content/usecases";
+import { type UseCase, featureList } from "@/content/usecases";
 
 const APP = "https://app.myshorts.in";
 
 export default function UseCasePage({ data }: { data: UseCase }) {
-  const others = usecaseList.filter((u) => u.slug !== data.slug);
+  const others = featureList.filter((u) => u.slug !== data.slug);
 
   return (
     <>

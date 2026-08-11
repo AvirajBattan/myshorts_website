@@ -587,3 +587,7 @@ h1, h2, h3, h4 { font-family: var(--font); font-weight: 640; letter-spacing: -0.
   -webkit-text-fill-color: transparent; color: transparent;
   animation: shimmer 7s ease-in-out infinite;
 }
+
+.article-cta-related { margin: 14px 0 0; font-size: 15px; }
+.article-cta-related a { color: var(--accent); font-weight: 600; }
+.article-cta-related a:hover { text-decoration: underline; }

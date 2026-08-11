@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Reframe from "@/components/Reframe";
 import Reveal from "@/components/Reveal";
 import FillVideo from "@/components/FillVideo";
-import { usecaseList } from "@/content/usecases";
+import { featureList } from "@/content/usecases";
 
 const APP = "https://app.myshorts.in";
 
@@ -169,7 +169,7 @@ export default function Home() {
             <p className="sec-sub">Paste a YouTube video once and MyShorts becomes whatever you need it to be.</p>
           </Reveal>
           <div className="uc-cards">
-            {usecaseList.map((u, i) => (
+            {featureList.map((u, i) => (
               <Reveal as="article" className="uc-card" key={u.slug} delay={i * 0.06}>
                 <Link href={`/${u.slug}`}>
                   <h3>{u.navLabel}</h3>
@@ -178,7 +178,7 @@ export default function Home() {
                 </Link>
               </Reveal>
             ))}
-            <Reveal as="article" className="uc-card" delay={usecaseList.length * 0.06}>
+            <Reveal as="article" className="uc-card" delay={featureList.length * 0.06}>
               <a href="#features">
                 <h3>Viral Shorts</h3>
                 <p>Turn the best moments into scroll-stopping 9:16 clips with captions.</p>
