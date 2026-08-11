@@ -30,11 +30,11 @@ export default function Nav() {
   return (
     <header className={`nav${scrolled ? " scrolled" : ""}${open ? " open" : ""}`}>
       <div className="wrap nav-inner">
-        <a className="brand" href="#top" aria-label="MyShorts home"><Mark /><span className="brand-word">MyShorts<span className="brand-ai">.in</span></span></a>
+        <a className="brand" href="/#top" aria-label="MyShorts home"><Mark /><span className="brand-word">MyShorts<span className="brand-ai">.in</span></span></a>
         <nav className="nav-links" onClick={() => setOpen(false)} aria-label="Primary">
-          <a href="#how">How it works</a>
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
+          <a href="/#how">How it works</a>
+          <a href="/#features">Features</a>
+          <a href="/#pricing">Pricing</a>
           <a href="/blog">Blog</a>
           {/* shown inside the mobile dropdown only */}
           <div className="nav-links-cta">
