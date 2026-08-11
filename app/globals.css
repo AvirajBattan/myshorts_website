@@ -563,3 +563,27 @@ h1, h2, h3, h4 { font-family: var(--font); font-weight: 640; letter-spacing: -0.
   .cc-t b { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .cc .go { flex-shrink: 0; font-size: 10px; padding: 5px 8px; }
 }
+
+/* ---------- use-case landing pages ---------- */
+.uc-hero { padding-top: 52px; padding-bottom: 20px; }
+.uc-hero-inner { max-width: 740px; margin: 0 auto; text-align: center; }
+.uc-hero h1 { font-size: clamp(38px, 5.4vw, 66px); font-weight: 680; letter-spacing: -0.04em; margin-bottom: 20px; }
+.uc-hero .lede { margin: 0 auto 26px; max-width: 44ch; }
+.uc-hero .paste { margin: 0 auto 14px; }
+.uc-hero .paste-note { justify-content: center; }
+
+.uc-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 18px; }
+.uc-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow-sm); transition: border-color .18s, transform .18s, box-shadow .18s; }
+.uc-card:hover { border-color: var(--border-2); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.uc-card a { display: block; padding: 24px; }
+.uc-card h3 { font-size: 19px; margin-bottom: 8px; letter-spacing: -0.02em; }
+.uc-card p { color: var(--ink-2); font-size: 14.5px; margin-bottom: 12px; line-height: 1.5; }
+.uc-card-go { font-size: 13.5px; font-weight: 600; color: var(--accent); }
+
+/* ember highlight on use-case page H1 (mirrors the homepage hero .hl) */
+.uc-hero h1 .hl {
+  background: linear-gradient(92deg, #FC4438 18%, #FF8A5A 50%, #FC4438 82%);
+  background-size: 220% 100%; -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  animation: shimmer 7s ease-in-out infinite;
+}

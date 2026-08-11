@@ -1,7 +1,9 @@
+import Link from "next/link";
 import Hero from "@/components/Hero";
 import Reframe from "@/components/Reframe";
 import Reveal from "@/components/Reveal";
 import FillVideo from "@/components/FillVideo";
+import { usecaseList } from "@/content/usecases";
 
 const APP = "https://app.myshorts.in";
 
@@ -157,6 +159,35 @@ export default function Home() {
 
       {/* ===== REFRAME (scroll-scrubbed) ===== */}
       <Reframe />
+
+      {/* ===== MORE THAN SHORTS (use-case landing links) ===== */}
+      <section className="section" id="tools">
+        <div className="wrap">
+          <Reveal className="sec-head">
+            <span className="eyebrow">More than Shorts</span>
+            <h2>One link. Summaries, notes, answers — and Shorts.</h2>
+            <p className="sec-sub">Paste a YouTube video once and MyShorts becomes whatever you need it to be.</p>
+          </Reveal>
+          <div className="uc-cards">
+            {usecaseList.map((u, i) => (
+              <Reveal as="article" className="uc-card" key={u.slug} delay={i * 0.06}>
+                <Link href={`/${u.slug}`}>
+                  <h3>{u.navLabel}</h3>
+                  <p>{u.cardDesc}</p>
+                  <span className="uc-card-go">Learn more →</span>
+                </Link>
+              </Reveal>
+            ))}
+            <Reveal as="article" className="uc-card" delay={usecaseList.length * 0.06}>
+              <a href="#features">
+                <h3>Viral Shorts</h3>
+                <p>Turn the best moments into scroll-stopping 9:16 clips with captions.</p>
+                <span className="uc-card-go">See how →</span>
+              </a>
+            </Reveal>
+          </div>
+        </div>
+      </section>
 
       {/* ===== WHO IT'S FOR ===== */}
       <section className="section" id="who">
