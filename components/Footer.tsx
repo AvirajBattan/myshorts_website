@@ -30,7 +30,8 @@ export default function Footer() {
           <div><h4>Company</h4><a href="/blog">Blog</a><a href="/#faq">FAQ</a><a href={APP}>Sign in</a></div>
           <div>
             <h4>Compare</h4>
-            {compareList.map((u) => (<a key={u.slug} href={`/${u.slug}`}>{u.navLabel}</a>))}
+            <a href="/alternatives">All alternatives</a>
+            {compareList.slice(0, 4).map((u) => (<a key={u.slug} href={`/${u.slug}`}>{u.navLabel}</a>))}
             <a href="/privacy">Privacy</a><a href="/terms">Terms</a>
           </div>
         </nav>

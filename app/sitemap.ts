@@ -5,10 +5,10 @@ import { usecaseList } from "@/content/usecases";
 const SITE = "https://myshorts.in";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPages = ["", "/blog", "/privacy", "/terms"].map((path) => ({
+  const staticPages = ["", "/blog", "/alternatives", "/privacy", "/terms"].map((path) => ({
     url: `${SITE}${path}`,
     changeFrequency: "weekly" as const,
-    priority: path === "" ? 1 : 0.6,
+    priority: path === "" ? 1 : path === "/alternatives" ? 0.7 : 0.6,
   }));
 
   // Use-case landing pages — high priority (they carry the non-"shorts" search intents).

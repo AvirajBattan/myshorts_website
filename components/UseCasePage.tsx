@@ -52,6 +52,22 @@ export default function UseCasePage({ data }: { data: UseCase }) {
         </div>
       </section>
 
+      {/* long-form content (SEO) */}
+      {data.body && data.body.length > 0 && (
+        <section className="section uc-body">
+          <div className="wrap">
+            <div className="uc-prose">
+              {data.body.map((b, i) => (
+                <Reveal key={i} delay={i * 0.04}>
+                  <h2>{b.h}</h2>
+                  <p>{b.p}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* cross-links to other use cases (internal linking + discovery) */}
       <section className="section">
         <div className="wrap">
